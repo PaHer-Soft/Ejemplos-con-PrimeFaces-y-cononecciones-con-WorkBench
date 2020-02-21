@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="AlumnoViewDlg" widgetVar="AlumnoViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewAlumnoTitle}">
+            <h:form id="AlumnoViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{alumnoController.selected != null}">
+                        <h:outputText value="#{bundle.ViewAlumnoLabel_codAlumno}"/>
+                        <h:outputText value="#{alumnoController.selected.codAlumno}" title="#{bundle.ViewAlumnoTitle_codAlumno}"/>
+                        <h:outputText value="#{bundle.ViewAlumnoLabel_nomAlumno}"/>
+                        <h:outputText value="#{alumnoController.selected.nomAlumno}" title="#{bundle.ViewAlumnoTitle_nomAlumno}"/>
+                        <h:outputText value="#{bundle.ViewAlumnoLabel_apellAlumno}"/>
+                        <h:outputText value="#{alumnoController.selected.apellAlumno}" title="#{bundle.ViewAlumnoTitle_apellAlumno}"/>
+                        <h:outputText value="#{bundle.ViewAlumnoLabel_telAlumno}"/>
+                        <h:outputText value="#{alumnoController.selected.telAlumno}" title="#{bundle.ViewAlumnoTitle_telAlumno}"/>
+                        <h:outputText value="#{bundle.ViewAlumnoLabel_direcAlumno}"/>
+                        <h:outputText value="#{alumnoController.selected.direcAlumno}" title="#{bundle.ViewAlumnoTitle_direcAlumno}"/>
+                        <h:outputText value="#{bundle.ViewAlumnoLabel_correoAlumno}"/>
+                        <h:outputText value="#{alumnoController.selected.correoAlumno}" title="#{bundle.ViewAlumnoTitle_correoAlumno}"/>
+                        <h:outputText value="#{bundle.ViewAlumnoLabel_generoCodGenero}"/>
+                        <h:outputText value="#{alumnoController.selected.generoCodGenero}" title="#{bundle.ViewAlumnoTitle_generoCodGenero}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="AlumnoViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
